@@ -9,7 +9,6 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 function App() {
   const documentUrl = "https://cdn.visionias.in/misc/c610ysw70901694414484.pdf";
-
   return (
     <Router>
       <div className="App">
@@ -25,11 +24,13 @@ function App() {
 }
 
 function Home() {
+  const url = window.location.href;
+
   return (
     <div>
-        <a href="/pdfViewer" target="_blank">View pdf</a>
+        <a href={url} target="_blank">View pdf</a>
         <div style={{marginTop: '15px'}}>
-        <a href="/pdfjsViewer" target="_blank">View JS pdf</a>
+        <a href={url} target="_blank">View JS pdf</a>
         </div>
     </div>
   );
