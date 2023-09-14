@@ -7,7 +7,6 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 
-
 function App() {
   const documentUrl = "https://cdn.visionias.in/misc/c610ysw70901694414484.pdf";
   return (
@@ -15,8 +14,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pdfViewer" element={<PdfViewerComponent document={documentUrl} documentType='pdf' />} />
-          <Route path="/pdfjsViewer" element={<PdfViewer fileName={documentUrl} />} />
+          <Route path="/pdfViewer" element={<PdfViewerComponent />} />
+          <Route path="/pdfjsViewer" element={<PdfViewer />} />
         </Routes>
       </div>
     </Router>
@@ -28,11 +27,10 @@ function Home() {
 
   return (
     <div>
-      
-              <Link to="/pdfViewer">View pdf</Link>
-              <div style={{ marginTop: '15px' }}>
-        <Link to="/pdfjsViewer">View JS pdf</Link>
-      </div>
+        <a href={`${url}pdfViewer`} target="_blank">View pdf</a>
+        <div style={{marginTop: '15px'}}>
+        <a href={`${url}pdfjsViewer`} target="_blank">View JS pdf</a>
+        </div>
     </div>
   );
 }

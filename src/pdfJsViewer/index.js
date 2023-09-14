@@ -25,7 +25,7 @@ const PDFViewer = ({ fileName }) => {
           workerUrl="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.js"
         >
           <Viewer
-            fileUrl={fileName}
+            fileUrl='https://cdn.visionias.in/misc/c610ysw70901694414484.pdf'
             plugins={[defaultLayoutPluginInstance]}
             defaultScale={SpecialZoomLevel.ActualSize}
           />

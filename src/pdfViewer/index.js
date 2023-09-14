@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 
-export default function PdfViewerComponent(props) {
+export default function PdfViewerComponent() {
   const containerRef = useRef(null);
-
+  
   useEffect(() => {
     const container = containerRef.current;
 
@@ -14,8 +14,6 @@ export default function PdfViewerComponent(props) {
       PSPDFKit.unload(container);
 
       const defaultItems = PSPDFKit.defaultToolbarItems;
-      console.log(defaultItems,'def');
-
       const itemsToRemove = ["multi-annotations-selection", "ink", "signature", "image", "stamp", "callout", "line", "arrow", "link", "rectangle", "ellipse", "polygon", "cloudy-polygon", "polyline", "document-editor", "document-crop"];
 
       const filteredItems = defaultItems.filter(
@@ -24,8 +22,7 @@ export default function PdfViewerComponent(props) {
 
       instance = await PSPDFKit.load({
         container,
-        DocumentType: props.documentType,
-        document: props.document,
+        document: 'https://cdn.visionias.in/misc/c610ysw70901694414484.pdf',
         baseUrl: `${window.location.protocol}//${window.location.host}/${process.env.PUBLIC_URL}`,
         toolbarItems: filteredItems,
       });
