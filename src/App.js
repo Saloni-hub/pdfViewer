@@ -27,9 +27,9 @@ function Home() {
 
   return (
     <div>
-        <a href={`${url}pdfViewer`} target="_blank">View pdf</a>
+        <a href='/pdfViewer' target="_blank">View pdf</a>
         <div style={{marginTop: '15px'}}>
-        <a href={`${url}pdfjsViewer`} target="_blank">View JS pdf</a>
+        <a href='/pdfjsViewer' target="_blank">View JS pdf</a>
         </div>
     </div>
   );
